@@ -44,6 +44,7 @@ def main():
         msg = MIMEMultipart()
 
         message = message_template.safe_substitute(OFFICE_NAME=name.title())
+        print('To: ' + name.title() + ' \n')
         print(message)
 
         msg['From'] = MY_ADDRESS
