@@ -9,7 +9,7 @@ MY_ADDRESS = input('Enter your gmail adress: ')
 PASSWORD = input('Enter your password: ')
 Subject = input('Enter email subject: ')
 
-filename = 'C:/Users/Odysseas/Desktop/ΠΑΡΑΣΚΗΝΙΟ/contacts.txt'
+filename = 'C:/Users/Odysseas/Desktop/ΠΑΡΑΣΚΗΝΙΟ/ΑΠΟΣΤΟΛΗ EMAIL/contacts.txt'
 def get_contacts(filename):
 
     names = []
@@ -20,7 +20,7 @@ def get_contacts(filename):
             emails.append(a_contact.split()[1])
     return names, emails
 
-filename = 'C:/Users/Odysseas/Desktop/ΠΑΡΑΣΚΗΝΙΟ/message.txt'
+filename = 'C:/Users/Odysseas/Desktop/ΠΑΡΑΣΚΗΝΙΟ/ΑΠΟΣΤΟΛΗ EMAIL/message.txt'
 def read_template(filename):
 
 
@@ -30,8 +30,8 @@ def read_template(filename):
 
 
 def main():
-    names, emails = get_contacts('C:/Users/Odysseas/Desktop/ΠΑΡΑΣΚΗΝΙΟ/offices.txt')
-    message_template = read_template('C:/Users/Odysseas/Desktop/ΠΑΡΑΣΚΗΝΙΟ/message.txt')
+    names, emails = get_contacts('C:/Users/Odysseas/Desktop/ΠΑΡΑΣΚΗΝΙΟ/ΑΠΟΣΤΟΛΗ EMAIL/offices.txt')
+    message_template = read_template('C:/Users/Odysseas/Desktop/ΠΑΡΑΣΚΗΝΙΟ/ΑΠΟΣΤΟΛΗ EMAIL/message.txt')
 
 
     s = smtplib.SMTP(host='smtp.gmail.com', port=587)
