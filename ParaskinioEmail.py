@@ -10,6 +10,7 @@ from email import encoders
 MY_ADDRESS = input('Enter your gmail adress: ')
 PASSWORD = input('Enter your password: ')
 Subject = input('Enter email subject: ')
+pdfname = input('Directory of PDF file you will send: ')
 
 filename = 'C:/Users/Odysseas/Desktop/ΠΑΡΑΣΚΗΝΙΟ/ΑΠΟΣΤΟΛΗ EMAIL/contacts.txt'
 def get_contacts(filename):
@@ -54,7 +55,6 @@ def main():
         msg['Subject'] = Subject
 
         msg.attach(MIMEText(message, 'plain'))
-        pdfname = input('Directory of PDF file you will send: ')
         if(pdfname != ''):
             binary_pdf = open(pdfname, 'rb')
             payload = MIMEBase('application', 'octate-stream', Name=pdfname)
