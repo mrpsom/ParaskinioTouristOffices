@@ -54,8 +54,14 @@ def main():
         msg['Subject'] = Subject
 
         msg.attach(MIMEText(message, 'plain'))
-        filename = input('File you will send: ')
-        msg.attach(MIMEText(open(filename).read()))
+        pdfname = input('Directory of PDF file you will send: ')
+        if(pdfname != ' '):
+            binary_pdf = open(pdfname, 'rb')
+            payload = MIMEBase('application', 'octate-stream', Name=pdfname)
+            payload.set_payload((binary_pdf).read())
+            encoders.encode_base64(payload)
+            payload.add_header('Content-Decomposition', 'attachment', filename=pdfname)
+            msg.attach(payload)
         s.send_message(msg)
         del msg
 
