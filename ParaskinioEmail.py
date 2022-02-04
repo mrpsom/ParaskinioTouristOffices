@@ -52,7 +52,8 @@ def main():
         msg['Subject'] = Subject
 
         msg.attach(MIMEText(message, 'plain'))
-
+        filename = input('File you will send: ')
+        msg.attach(MIMEText(open(filename).read()))
         s.send_message(msg)
         del msg
 
