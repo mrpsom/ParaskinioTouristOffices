@@ -11,6 +11,7 @@ MY_ADDRESS = input('Enter your gmail adress: ')
 PASSWORD = input('Enter your password: ')
 Subject = input('Enter email subject: ')
 pdfname = input('Directory of PDF file you will send (HIT ENTER IF NOT ANY): ')
+pdfnameraw = input('Name of said PDF file: ')
 
 filename = 'C:/Users/Odysseas/Desktop/ΠΑΡΑΣΚΗΝΙΟ/ΑΠΟΣΤΟΛΗ EMAIL/contacts.txt'
 def get_contacts(filename):
@@ -57,7 +58,7 @@ def main():
         msg.attach(MIMEText(message, 'plain'))
         if(pdfname != ''):
             binary_pdf = open(pdfname, 'rb')
-            payload = MIMEBase('application', 'octate-stream', Name=pdfname)
+            payload = MIMEBase('application', 'octate-stream', Name=pdfnameraw)
             payload.set_payload((binary_pdf).read())
             encoders.encode_base64(payload)
             payload.add_header('Content-Decomposition', 'attachment', filename=pdfname)
