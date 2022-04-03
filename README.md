@@ -1,6 +1,6 @@
 # ParaskinioTouristOffices
 This program sends a message to various email adresses.
-Fist, download offices.txt and message.txt 
+First, download offices.txt and message.txt 
 Then, enter the directory of the files where it is needed.
 In the offices.txt file, enter the name of the receiver with a capital first letter. Leave a space and then enter their e-mail adress.
 In order to enter a second receiver, change the line.
